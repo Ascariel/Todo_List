@@ -59,4 +59,7 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/v/3-0/docs
   config.infer_spec_type_from_file_location!
+  ##################################################
+  #ADDED BY MYSELF TO STOP DEPRECATION WARNINGS RSpec::Core::ExampleGroup#example is deprecated
+  config.expose_current_running_example_as :example
 end
