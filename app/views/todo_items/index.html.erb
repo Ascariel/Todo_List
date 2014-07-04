@@ -1,2 +1,14 @@
-<h1>TodoItems#index</h1>
+
+
+
+<h1> <%= @todo_list.title%> </h1>
 <p>Find me in app/views/todo_items/index.html.erb</p>
+<ul class="todo_items" id= "<%= dom_id(@todo_list) %>">
+	<% @todo_list.todo_items.each do |item| %>	
+
+		<li> <%= item.content %> </li>
+	<% end %>
+
+</ul>
+
+<a><%= link_to "New Todo Item", new_todo_list_todo_item_path(@todo_list)  %> </a>
