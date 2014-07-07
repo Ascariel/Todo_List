@@ -2,13 +2,16 @@
 
 
 <h1> <%= @todo_list.title%> </h1>
-<p>Find me in app/views/todo_items/index.html.erb</p>
+
 <ul class="todo_items" id= "<%= dom_id(@todo_list) %>">
 	<% @todo_list.todo_items.each do |item| %>	
 
-		<li> <%= item.content %> </li>
+		<li id="<%= dom_id(item) %>">  <%= item.content %> 
+			<%= link_to "Edit", edit_todo_list_todo_item_path(item) %> <!-- THANKS TO URL_OPTIONS METHOD, I COULD ALSO SAY (@TODO_LIST, ITEM), TO PASS IN THE REQUIRED ID'S-->
+		</li>
 	<% end %>
 
 </ul>
-
-<a><%= link_to "New Todo Item", new_todo_list_todo_item_path(@todo_list)  %> </a>
+<p>
+<%= link_to "New Todo Item", new_todo_list_todo_item_path(@todo_list)  %>
+</p>
