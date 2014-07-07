@@ -1,24 +1,8 @@
 
-
+<h1><%= @todo_list.title %> - Adding Todo List Item </h1>
 
 <%= form_for [@todo_list, @todo_item] do |f|%>
 
- <% if @todo_item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@todo_item.errors.count, "error") %> prohibited this todo item from being saved:</h2>
-
-      <ul>
-      <% @todo_item.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-
-
-<p>Item
-<%= f.label :content %>
-<%= f.text_field :content  %>
-<%= f.submit "Add to list" %></p>
+ <%= render partial: 'form', locals: {f: f} %> 
+ <!--IF IM RENDERING A FORM, I NEED TO PASS HER THE FORM OBJECT, IN THIS CASE I USED A LOCAL VAR TRANSFER  THROUGH A BLOCK-->
 <% end %>
