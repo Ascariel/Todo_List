@@ -6,7 +6,8 @@
 <table class="todo_items" id= "<%= dom_id(@todo_list) %>">
 	<% @todo_list.todo_items.each do |item| %>	
 
-		<tr id="<%= dom_id(item) %>">  <td><%= item.content %> </td>
+		<tr id="<%= dom_id(item) %>">  
+			<td><%= item.content %> </td>
 			<td><%= link_to "Edit", edit_todo_list_todo_item_path(item) %> </td><!-- THANKS TO URL_OPTIONS METHOD, I COULD ALSO SAY (@TODO_LIST, ITEM), TO PASS IN THE REQUIRED ID'S-->
 			<td><%= link_to "Delete", todo_list_todo_item_path(item), method: :delete, data: { confirm: "Are you sure?"} %></td>
 		</tr>

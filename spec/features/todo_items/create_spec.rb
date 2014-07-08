@@ -3,7 +3,7 @@ require 'spec_helper'
 
 describe "testing list item creation" do 
 	let!(:todo_list) {TodoList.create(title: "Grocery List", description: "Something to do")}
-	let!(:todo_item) {todo_list.todo_items.create(content:"Milk")}
+	# let!(:todo_item) {todo_list.todo_items.create(content:"Milk")}
 
 	
 
