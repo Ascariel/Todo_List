@@ -7,12 +7,7 @@ describe "Tests editing actions" do
 	let!(:todo_list) {TodoList.create(title: "Grocery List", description: "Something to do")}
 	let!(:todo_item) {todo_list.todo_items.create(content:"Milk")}
 
-	def visit_todo_list(list)
-		visit "/todo_lists"
-		within("#todo_list_#{list.id}") do
-			click_link("List Items")
-		end
-	end
+	
 
 	it "succesfully displays content when editing" do 
 
